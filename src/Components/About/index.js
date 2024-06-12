@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 const About = () => {
-  return <div>About</div>;
+  const [text, updateText] = useState(true);
+  let texts = text ? "Login" : "Logout";
+  return (
+    <div>
+      <h1>About</h1>
+      <button
+        onClick={() => {
+          updateText(!text);
+        }}
+      >
+        {texts}
+      </button>
+    </div>
+  );
 };
 
 export default About;
